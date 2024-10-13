@@ -29,6 +29,15 @@ window.addEventListener('load', function(){
 
     });
 
+    const result = JSON.parse(this.localStorage.getItem('result'));
+
+    if(result) {
+        mostrarAlerta('Usuario deslogeado en la fecha: ' + result.fecha)
+    }else{
+        return
+    }
+    
+
 });
 
 function mostrarAlerta(mensaje) {
@@ -71,6 +80,7 @@ async function autenticar() {
 
         if(result.codigo === '00') {
             localStorage.setItem('result', JSON.stringify(result));
+            localStorage.setItem('user', JSON.stringify(request));
             window.location.replace('principal.html');
         } else {
             mostrarAlerta(result.mensaje);
