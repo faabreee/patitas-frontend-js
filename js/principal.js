@@ -35,7 +35,11 @@ function mostrarAlerta(mensaje) {
 
 async function logout (tipoDocumento, numeroDocumento) {
 
-    const url = 'http://localhost:8083/login/logout';
+    // LOGOUT EXAMEN T3
+    //const url = 'http://localhost:8083/login/logout';
+
+    // LOGOUT EXAMEN T2
+    const url = 'http://localhost:8083/login/logout-async';
     const request = {
         tipoDocumento: tipoDocumento,
         numeroDocumento: numeroDocumento,
